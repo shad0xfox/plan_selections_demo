@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:require-path-exists/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "require-path-exists",
+    "require-sort"
+  ],
+  "rules": {
+    "eqeqeq": "error",
+    "no-console": "off",
+    "prettier/prettier": "error",
+    "no-unused-vars": 1,
+    "require-sort/require-sort": "error"
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "requireConfigFile": false,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "build",
+    "dist",
+    "public"
+  ]
+}
