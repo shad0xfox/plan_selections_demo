@@ -1,11 +1,11 @@
 const ENUM_PLAN_STATUS = {
-  ENABLE: 1,
+  ENABLED: 1,
   DISABLED: 0,
   ARCHIVED: 9,
 };
 
 const ENUM_ITEM_OF_PLAN_STATUS = {
-  ENABLE: 1,
+  ENABLED: 1,
   DISABLED: 0,
   ARCHIVED: 9,
 };

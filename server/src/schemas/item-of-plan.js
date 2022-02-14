@@ -9,7 +9,6 @@ const schema = {
   },
   order: {
     type: Sequelize.INTEGER,
-    allowNull: false,
     unique: true,
   },
   status: {
@@ -18,7 +17,7 @@ const schema = {
     validate: {
       isIn: [Object.values(ENUM_ITEM_OF_PLAN_STATUS)],
     },
-    defaultValue: ENUM_ITEM_OF_PLAN_STATUS.ENABLE,
+    defaultValue: ENUM_ITEM_OF_PLAN_STATUS.ENABLED,
   },
 };
 

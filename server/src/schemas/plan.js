@@ -7,10 +7,20 @@ const schema = {
     allowNull: false,
     unique: true,
   },
+  order: {
+    type: Sequelize.INTEGER,
+    unique: true,
+  },
   price: {
     type: Sequelize.INTEGER,
     allowNull: false,
     defaultValue: 0,
+    get() {
+      const price = this.getDataValue("price");
+      const pricePrecision = this.getDataValue("pricePrecision");
+
+      return price / 10 ** pricePrecision;
+    },
   },
   pricePrecision: {
     type: Sequelize.INTEGER,
@@ -23,7 +33,7 @@ const schema = {
     validate: {
       isIn: [Object.values(ENUM_PLAN_STATUS)],
     },
-    defaultValue: ENUM_PLAN_STATUS.ENABLE,
+    defaultValue: ENUM_PLAN_STATUS.ENABLED,
   },
 };
 
