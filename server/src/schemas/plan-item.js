@@ -8,7 +8,7 @@ const schema = {
   },
   itemId: {
     type: Sequelize.INTEGER,
-    defaultValue: true,
+    allowNull: false,
     primaryKey: true,
   },
 };

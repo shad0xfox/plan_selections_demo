@@ -14,6 +14,7 @@ const schema = {
   },
   status: {
     type: Sequelize.INTEGER,
+    allowNull: false,
     validate: {
       isIn: [Object.values(ENUM_ITEM_OF_PLAN_STATUS)],
     },

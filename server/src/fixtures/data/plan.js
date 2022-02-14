@@ -6,5 +6,6 @@ module.exports = [
   {
     id: 2,
     name: "Premium Plan",
+    price: 3880000,
   },
 ];

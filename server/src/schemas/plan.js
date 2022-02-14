@@ -7,8 +7,19 @@ const schema = {
     allowNull: false,
     unique: true,
   },
+  price: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+  },
+  pricePrecision: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    defaultValue: 4,
+  },
   status: {
     type: Sequelize.INTEGER,
+    allowNull: false,
     validate: {
       isIn: [Object.values(ENUM_PLAN_STATUS)],
     },
