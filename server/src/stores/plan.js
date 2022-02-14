@@ -3,7 +3,7 @@ const Model = require("../models/plan");
 
 function getEnabledPlans() {
   return Model.findAll({
-    attributes: ["id", "name", "price", "pricePrecision"],
+    attributes: ["id", "name", "price", "pricePrecision", "order"],
     where: {
       status: ENUM_PLAN_STATUS.ENABLED,
     },
