@@ -1,0 +1,16 @@
+const ENUM_PLAN_STATUS = {
+  ENABLE: 1,
+  DISABLED: 0,
+  ARCHIVED: 9,
+};
+
+const ENUM_ITEM_OF_PLAN_STATUS = {
+  ENABLE: 1,
+  DISABLED: 0,
+  ARCHIVED: 9,
+};
+
+module.exports = {
+  ENUM_PLAN_STATUS,
+  ENUM_ITEM_OF_PLAN_STATUS,
+};
