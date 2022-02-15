@@ -1,4 +1,4 @@
 {
-    "origin": ["http://localhost:3001", "https://editor.swagger.io"],
+    "origin": ["http://localhost:3001"],
     "credentials": true
 }

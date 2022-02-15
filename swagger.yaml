@@ -1,0 +1,273 @@
+swagger: '2.0'
+info:
+  title: Plan Selections
+  description: Plan selections demo api doc
+  version: 1.0.0
+host: localhost:3000
+schemes:
+  - http
+basePath: /api
+produces:
+  - application/json
+paths:
+  /plans:
+    get:
+      tags:
+        - Plan
+      summary: All plans
+      description: get all plans
+      responses:
+        '200':
+          description: An array of plans
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Plan'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      tags:
+        - Plan
+      summary: create plan
+      description: create plan
+      parameters:
+      - name: "plan"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/createPlan"
+      responses:
+        '201':
+          description: created
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /plans/{planId}:
+    delete:
+      tags:
+        - Plan
+      summary: delete plan
+      description: delete plan
+      parameters:
+      - name: "planId"
+        in: "path"
+        required: true
+        type: number
+      responses:
+        '204':
+          description: no content
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    patch:
+      deprecated: true
+      tags:
+        - Plan
+      summary: update plan
+      description: update plan
+      parameters:
+      - name: "planId"
+        in: "path"
+        required: true
+        type: number
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/updatePlan"
+      responses:
+        '204':
+          description: no content
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /itemsOfPlan:
+    get:
+      tags:
+        - ItemsOfPlan
+      summary: all items of plan
+      description: get all items of plan
+      responses:
+        '200':
+          description: An array of plans
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/itemsOfPlan'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      deprecated: true
+      tags:
+        - ItemsOfPlan
+      summary: create item of plan
+      description: create item of plan
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/createItemOfPlan"
+      responses:
+        '201':
+          description: created
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /itemsOfPlan/{itemOfPlanId}:
+    delete:
+      deprecated: true
+      tags:
+        - ItemsOfPlan
+      summary: delete item of plan
+      description: delete item of plan
+      parameters:
+      - name: "itemOfPlanId"
+        in: "path"
+        required: true
+        type: number
+      responses:
+        '204':
+          description: no content
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    patch:
+      deprecated: true
+      tags:
+        - ItemsOfPlan
+      summary: update item of plan
+      description: update item of plan
+      parameters:
+      - name: "itemOfPlanId"
+        in: "path"
+        required: true
+        type: number
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/updateItemOfPlan"
+      responses:
+        '204':
+          description: no content
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /planItem:
+    patch:
+      tags:
+        - PlanItem
+      summary: toggle item of specific plan
+      description: toggle item of specific plan
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/togglePlanItem"
+      responses:
+        '204':
+          description: no content
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  Plan:
+    properties:
+      id:
+        type: number
+        description: id of plan.
+      price:
+        type: number
+        description: price of plan.
+      name:
+        type: string
+        description: name of plan.
+      pricePrecision:
+        type: number
+        description: precision of plan price
+      order:
+        type: number
+        description: order of plan
+      planItems:
+        type: object
+        description: items of plan
+        properties:
+          "{planId}":
+            type: object
+  createPlan:
+    properties:
+      name:
+        type: string
+        description: name of plan.
+      price:
+        type: number
+        description: price of plan.
+  updatePlan:
+    properties:
+      name:
+        type: string
+        description: name of plan.
+      price:
+        type: number
+        description: price of plan.
+      order:
+        type: number
+        description: order of plan.
+  itemsOfPlan:
+    properties:
+      name:
+        type: string
+        description: name of item of plan.
+      id:
+        type: number
+        description: id of item of plan.
+      order:
+        type: number
+        description: order of item of plan.
+  createItemOfPlan:
+    properties:
+      name:
+        type: string
+        description: name of item of plan.
+  updateItemOfPlan:
+    properties:
+      name:
+        type: string
+        description: name of item of plan.
+      order:
+        type: number
+        description: price of item of plan.
+  togglePlanItem:
+    properties:
+      planId:
+        type: number
+        description: id of plan
+      itemId:
+        type: number
+        description: id of item of plan
+      value:
+        type: boolean
+        description: toggle value
+  Error:
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string

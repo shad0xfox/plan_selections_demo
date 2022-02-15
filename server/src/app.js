@@ -12,7 +12,16 @@ app.use(require("morgan")("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(helmet());
-app.use(cors(corsOptions));
+
+if (isProduction) {
+  app.use(cors(corsOptions));
+} else {
+  app.use(
+    cors({
+      origin: "*",
+    })
+  );
+}
 
 app.use(require("./routes"));
 

@@ -9,6 +9,15 @@ function deleteItemsByPlanId(planId, { transaction } = {}) {
   });
 }
 
+function getPlanItem(planId, itemId) {
+  return Model.findOne({
+    where: {
+      planId,
+      itemId,
+    },
+  });
+}
+
 function createPlanItem(planId, itemId) {
   return Model.create({
     planId,
@@ -16,7 +25,18 @@ function createPlanItem(planId, itemId) {
   });
 }
 
+function deletePlanItem(planId, itemId) {
+  return Model.destroy({
+    where: {
+      planId,
+      itemId,
+    },
+  });
+}
+
 module.exports = {
   deleteItemsByPlanId,
+  getPlanItem,
   createPlanItem,
+  deletePlanItem,
 };
