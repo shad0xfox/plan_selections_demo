@@ -24,16 +24,7 @@ Please watch `README.md` in `server` and `app` folders
 ## How to run local (docker)
 
 ```sh
-docker build -t plan_selections .
-
-docker run -d -p 3000:3000 \
-  -e NODE_ENV="production" \
-  -e DB_HOST=host.docker.internal \
-  -e DB_PORT="3310" \
-  -e DB_SCHEMA="plan_selections" \
-  -e DB_USER_NAME="root" \
-  -e DB_PASSWORD="password" \
-  --name plan_selections plan_selections
+./start.sh
 ```
 
 <br/>
