@@ -30,7 +30,7 @@ Please watch `README.md` in `server` and `app` folders
 <br/>
 
 
-## api document
+## API document
 With swagger.yaml, we can preview it in vscode after install Swagger Viewer plugin.  
 
 We can also get yaml link from Raw of [github yaml file](https://github.com/shad0xfox/plan_selections_demo/blob/master/swagger.yaml) and then paste the link to [SwaggerUI](https://petstore.swagger.io/)
