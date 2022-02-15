@@ -1,6 +1,6 @@
 require("../config");
 
-const db = require("../lib/db");
+const db = require("../libs/db");
 db.connect().then(async () => {
   const { server } = require("../app");
 

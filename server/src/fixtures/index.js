@@ -1,5 +1,5 @@
 require("../config");
-const { connect } = require("../lib/db");
+const { connect } = require("../libs/db");
 
 module.exports = async function () {
   try {

@@ -1,7 +1,7 @@
 const { indexes, schema } = require("../schemas/plan");
 const ItemOfPlanModel = require("./item-of-plan");
 const PlanItemModel = require("./plan-item");
-const { getInstance } = require("../lib/db");
+const { getInstance } = require("../libs/db");
 
 const Plan = getInstance().define("plan", schema, indexes);
 

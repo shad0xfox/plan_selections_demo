@@ -1,4 +1,4 @@
-const { ENUM_PLAN_STATUS } = require("../../lib/enum");
+const { ENUM_PLAN_STATUS } = require("../../libs/enum");
 
 module.exports = [
   {

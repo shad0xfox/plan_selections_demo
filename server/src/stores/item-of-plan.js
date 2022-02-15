@@ -1,4 +1,4 @@
-const { ENUM_ITEM_OF_PLAN_STATUS } = require("../lib/enum");
+const { ENUM_ITEM_OF_PLAN_STATUS } = require("../libs/enum");
 const Model = require("../models/item-of-plan");
 
 function getEnabledItemsOfPlan() {
