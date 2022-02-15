@@ -21,6 +21,9 @@ const schema = {
 
       return price / 10 ** pricePrecision;
     },
+    set(value) {
+      this.setDataValue("price", value * 10 ** 4);
+    },
   },
   pricePrecision: {
     type: Sequelize.INTEGER,

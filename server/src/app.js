@@ -30,6 +30,7 @@ if (!isProduction) {
       errors: {
         message: err.message,
         error: err,
+        extra: err.extra,
       },
     });
   });
@@ -43,6 +44,7 @@ app.use(function (err, req, res, next) {
     errors: {
       message: err.message,
       error: {},
+      extra: err.extra,
     },
   });
 });

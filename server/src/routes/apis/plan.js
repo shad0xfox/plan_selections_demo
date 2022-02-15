@@ -1,6 +1,16 @@
 const router = require("express").Router();
-const { handleGetPlansRequest } = require("../../router-handlers/plan");
+const {
+  beforeCreatePlansRequest,
+  beforeDeletePlansRequest,
+} = require("../../router-hooks/plan");
+const {
+  handleCreatePlanRequest,
+  handleDeletePlanRequest,
+  handleGetPlansRequest,
+} = require("../../router-handlers/plan");
 
-router.get("/", handleGetPlansRequest);
+router.get("/", [handleGetPlansRequest]);
+router.post("/", [beforeCreatePlansRequest, handleCreatePlanRequest]);
+router.delete("/:planId", [beforeDeletePlansRequest, handleDeletePlanRequest]);
 
 module.exports = router;
