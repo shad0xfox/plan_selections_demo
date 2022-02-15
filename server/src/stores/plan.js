@@ -73,7 +73,7 @@ function archivePlanById(id, { transaction } = {}) {
 
 function decreaseOrderGreaterThan(startOrder, { transaction } = {}) {
   // sequelize not support update with order
-  // need it because decrease order case duplicate unique key error
+  // need it because decrease order cause duplicate unique key error
   return getInstance().query(
     "UPDATE `plan` SET `order`=`order` - 1 WHERE `order` >= ? AND `status` != ? order by `order`",
     {
