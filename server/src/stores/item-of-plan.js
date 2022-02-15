@@ -7,6 +7,7 @@ function getEnabledItemsOfPlan() {
     where: {
       status: ENUM_ITEM_OF_PLAN_STATUS.ENABLED,
     },
+    order: [["order", "asc"]],
   });
 }
 

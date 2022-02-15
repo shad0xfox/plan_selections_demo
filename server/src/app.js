@@ -1,3 +1,5 @@
+const cors = require("cors");
+const corsOptions = require("./config/cors.json");
 const express = require("express");
 const helmet = require("helmet");
 const http = require("http");
@@ -10,6 +12,7 @@ app.use(require("morgan")("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(helmet());
+app.use(cors(corsOptions));
 
 app.use(require("./routes"));
 

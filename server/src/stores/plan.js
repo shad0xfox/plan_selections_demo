@@ -18,6 +18,7 @@ function getEnabledPlans() {
         attributes: [],
       },
     },
+    order: [["order", "asc"]],
   });
 }
 
