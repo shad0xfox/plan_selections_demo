@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/bin/server.js",
-    "dev": "nodemon src/bin/server.js"
+    "dev": "nodemon src/bin/server.js",
+    "test": "npx jest"
   },
   "author": "",
   "license": "ISC",
@@ -23,11 +24,13 @@
   "devDependencies": {
     "@babel/core": "^7.17.2",
     "@babel/eslint-parser": "^7.17.0",
+    "@types/jest": "^27.4.0",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-require-path-exists": "^1.1.9",
     "eslint-plugin-require-sort": "^1.2.2",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1"
   }
 }
