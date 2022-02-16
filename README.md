@@ -4,7 +4,7 @@
 A page show all the plans to select, free to modify the plan data
 
 ## Skill
-express, react, mysql, sequelize, docker
+express, react, mysql, sequelize, docker, jest
 
 ## create mysql
 (if MAC M1, need --platform linux/x86_64)
