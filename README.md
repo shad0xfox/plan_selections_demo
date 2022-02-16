@@ -26,6 +26,7 @@ Please watch `README.md` in `server` and `app` folders
 ```sh
 ./start.sh
 ```
+After starting the project, you can test on http://localhost:3000
 
 <br/>
 
